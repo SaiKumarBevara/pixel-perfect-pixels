@@ -49,7 +49,7 @@ const Index = () => {
             <Copy size={12} className="cursor-pointer hover:text-foreground transition-colors" />
           </div>
 
-          <p className="text-base md:text-lg max-w-md leading-relaxed text-muted-foreground font-serif italic">
+          <p className="text-base md:text-lg max-w-md leading-relaxed text-muted-foreground font-serif italic text-justify">
             Hello, I'm a Mendix Advanced Certified Developer specializing in enterprise low-code and AI-driven solutions with 2+ years of experience — based in Hyderabad. Let's create!
           </p>
         </motion.div>
