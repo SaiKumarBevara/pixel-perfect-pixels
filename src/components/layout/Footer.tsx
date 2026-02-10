@@ -1,42 +1,39 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const Footer = () => {
   return (
     <footer className="bg-foreground text-primary-foreground">
-      {/* CTA Section */}
-      <div className="px-6 md:px-12 py-20 md:py-32">
-        <div className="flex justify-end gap-6 mb-16 text-sm">
-          <a href="#" className="hover:text-accent transition-colors">Linkedin</a>
-          <a href="#" className="hover:text-accent transition-colors">Twitter</a>
-          <a href="#" className="hover:text-accent transition-colors">Behance</a>
+      {/* Social Links */}
+      <div className="px-6 md:px-12 pt-20 md:pt-32">
+        <div className="flex justify-end gap-6 mb-20 text-sm">
+          <a href="#" className="hover:opacity-70 transition-opacity">Linkedin</a>
+          <a href="#" className="hover:opacity-70 transition-opacity">Twitter</a>
+          <a href="#" className="hover:opacity-70 transition-opacity">Behance</a>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-light leading-tight max-w-3xl mb-12">
+        {/* CTA */}
+        <ScrollReveal>
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-light leading-[1.3] max-w-3xl text-primary-foreground/60">
             Curious about what we can create together?
             <br />
             Let's bring something extraordinary to life!
           </h2>
 
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-6 mt-10 pb-32">
             <Link
               to="/contact"
-              className="border border-primary-foreground/30 px-6 py-3 text-sm hover:bg-primary-foreground hover:text-foreground transition-colors"
+              className="border border-primary-foreground/30 px-8 py-3 text-sm hover:bg-primary-foreground hover:text-foreground transition-colors"
             >
               Get in Touch
             </Link>
-            <div className="flex items-center gap-2 text-sm">
-              <span className="w-2 h-2 rounded-full bg-green-400" />
+            <div className="flex items-center gap-2 text-sm text-primary-foreground/80">
+              <span className="w-2.5 h-2.5 rounded-full bg-primary-foreground/80" />
               Available For Work
             </div>
           </div>
-        </motion.div>
+        </ScrollReveal>
       </div>
 
       {/* Bottom bar */}
@@ -49,7 +46,7 @@ const Footer = () => {
           <p>Designed & Developed</p>
           <p>by Peter Hodak</p>
         </div>
-        <div className="text-right">
+        <div className="md:text-right">
           <p>All rights reserved,</p>
           <p>YUYA ©2024</p>
         </div>
