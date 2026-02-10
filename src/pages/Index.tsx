@@ -101,7 +101,7 @@ const Index = () => {
         </ScrollReveal>
 
         <ScrollReveal delay={0.15}>
-          <p className="text-2xl md:text-4xl lg:text-5xl font-bold leading-snug tracking-tight text-justify max-w-2xl">
+          <p className="text-2xl md:text-4xl lg:text-5xl font-bold leading-snug tracking-tight text-justify" style={{ maxWidth: '728px' }}>
             I collaborate with businesses of all sizes to build scalable Mendix applications using modern integrations and automation. My work spans healthcare, pharma, and FMCG, focusing on reliability, performance, and long-term value.
           </p>
         </ScrollReveal>
@@ -114,7 +114,7 @@ const Index = () => {
               className="w-64 md:w-80 object-cover"
               loading="lazy"
             />
-            <p className="text-sm text-muted-foreground max-w-xs text-justify">
+            <p className="text-sm text-muted-foreground text-justify" style={{ maxWidth: '311px' }}>
               I'm dedicated to building clean, maintainable Mendix solutions that align with business goals and support long-term growth.
             </p>
           </div>
