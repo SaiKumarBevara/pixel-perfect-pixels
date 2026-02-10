@@ -21,9 +21,9 @@ const About = () => {
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-7xl md:text-[8rem] lg:text-[10rem] font-black leading-[0.85] tracking-tighter uppercase text-center">
-            YUME<span className="text-accent">.</span>
+            Bevara<span className="text-accent">.</span>
             <br />
-            YASKUMI
+            SAIKUMAR
           </h1>
         </motion.div>
       </section>

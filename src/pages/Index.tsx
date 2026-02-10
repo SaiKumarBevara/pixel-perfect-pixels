@@ -18,9 +18,9 @@ const Index = () => {
             transition={{ duration: 0.7 }}
           >
             <h1 className="text-7xl md:text-[8rem] lg:text-[10rem] font-black leading-[0.85] tracking-tighter uppercase">
-              YUME
+              Bevara
               <br />
-              YASKUMI
+              SAIKUMAR
             </h1>
           </motion.div>
 
@@ -32,7 +32,7 @@ const Index = () => {
           >
             <img
               src={avatar}
-              alt="Yume Yaskumi"
+              alt="Bevara Saikumar"
               className="w-24 h-24 lg:w-32 lg:h-32 rounded-full object-cover"
             />
           </motion.div>
@@ -45,7 +45,7 @@ const Index = () => {
           className="flex flex-col md:flex-row md:items-end justify-between mt-12 border-t border-border pt-8"
         >
           <div className="flex items-center gap-2 text-sm text-muted-foreground mb-6 md:mb-0">
-            <span>hello@yume.com</span>
+            <span>bevarasaikumar121@gmail.com</span>
             <Copy size={12} className="cursor-pointer hover:text-foreground transition-colors" />
           </div>
 
