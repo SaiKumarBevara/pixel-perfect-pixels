@@ -80,8 +80,8 @@
 
 /* Custom cursor */
 .custom-cursor {
-  width: 12px;
-  height: 12px;
+  width: 32px;
+  height: 32px;
   background: hsl(var(--foreground));
   border-radius: 50%;
   position: fixed;
