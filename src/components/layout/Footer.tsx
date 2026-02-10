@@ -50,12 +50,12 @@ const Footer = () => {
       {/* Bottom bar */}
       <div className="border-t border-primary-foreground/10 px-6 md:px-12 py-6 flex flex-col md:flex-row justify-between text-xs text-primary-foreground/50 gap-4">
         <div>
-          <p>+81 (0)90 1234 5678</p>
+          <p>+91 9603086710</p>
           <p>bevarasaikumar121@gmail.com</p>
         </div>
         <div>
           <p>Designed & Developed</p>
-          <p>by Peter Hodak</p>
+          <p>by SaiKumar</p>
         </div>
         <div className="md:text-right">
           <p>All rights reserved,</p>

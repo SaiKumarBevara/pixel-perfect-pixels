@@ -32,7 +32,7 @@ const About = () => {
       <section className="px-6 md:px-12 py-16">
         <div className="flex items-center justify-between mb-8">
           <span className="section-label text-sm">about.</span>
-          <a href="#" className="text-sm text-accent hover:underline">Read.cv</a>
+          <a href="https://drive.google.com/drive/folders/1_f4UrKNN_DaOjhi5DJZI24uQVjLUEmW4?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-sm text-accent hover:underline">Read.cv</a>
         </div>
 
         <ScrollReveal>

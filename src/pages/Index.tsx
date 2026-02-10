@@ -94,7 +94,7 @@ const Index = () => {
         <ScrollReveal>
           <div className="flex items-center justify-between mb-8">
             <span className="section-label text-sm">about.</span>
-            <Link to="/about" className="text-sm text-accent hover:underline">Read.cv</Link>
+            <a href="https://drive.google.com/drive/folders/1_f4UrKNN_DaOjhi5DJZI24uQVjLUEmW4?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-sm text-accent hover:underline">Read.cv</a>
           </div>
         </ScrollReveal>
 
