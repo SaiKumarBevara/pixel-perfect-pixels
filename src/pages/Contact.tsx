@@ -3,6 +3,7 @@ import { forwardRef, useState } from "react";
 import { Copy } from "lucide-react";
 import Layout from "@/components/layout/Layout";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = forwardRef<HTMLDivElement>((_, ref) => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -34,17 +35,27 @@ const Contact = forwardRef<HTMLDivElement>((_, ref) => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
 
     setSending(true);
-    setTimeout(() => {
-      setSending(false);
+    try {
+      const { data, error } = await supabase.functions.invoke("send-contact-email", {
+        body: { name: form.name.trim(), email: form.email.trim(), message: form.message.trim() },
+      });
+
+      if (error) throw error;
+
       setForm({ name: "", email: "", message: "" });
       setErrors({});
       toast({ title: "Message sent!", description: "We'll get back to you soon." });
-    }, 1000);
+    } catch (err: any) {
+      console.error("Send error:", err);
+      toast({ title: "Failed to send message", description: "Please try again later.", variant: "destructive" });
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
