@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Layout from "@/components/layout/Layout";
+import ScrollReveal from "@/components/ScrollReveal";
 import { projects } from "@/lib/data";
 
 const ProjectDetail = () => {
@@ -56,65 +57,58 @@ const ProjectDetail = () => {
 
       {/* About */}
       <section className="px-6 md:px-12 py-16">
-        <div className="flex items-center justify-between mb-6">
-          <span className="section-label text-sm">about.</span>
-          <a href="#" className="text-sm text-accent hover:underline">See It Live</a>
-        </div>
+        <ScrollReveal>
+          <div className="flex items-center justify-between mb-6">
+            <span className="section-label text-sm">about.</span>
+            <a href="#" className="text-sm text-accent hover:underline">See It Live</a>
+          </div>
+        </ScrollReveal>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="space-y-8"
-        >
+        <ScrollReveal delay={0.1}>
           <p className="text-base md:text-lg leading-relaxed max-w-3xl">
             {project.about}
           </p>
+        </ScrollReveal>
+        <ScrollReveal delay={0.2}>
           <img
             src={project.detailImage}
             alt={`${project.title} detail`}
-            className="w-full h-64 md:h-96 object-cover"
+            className="w-full h-64 md:h-96 object-cover mt-8"
             loading="lazy"
           />
-        </motion.div>
+        </ScrollReveal>
       </section>
 
       {/* Challenge */}
       <section className="px-6 md:px-12 py-16">
-        <span className="section-label text-sm mb-6 block">challenge.</span>
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-base md:text-lg leading-relaxed max-w-3xl"
-        >
-          {project.challenge}
-        </motion.p>
+        <ScrollReveal>
+          <span className="section-label text-sm mb-6 block">challenge.</span>
+        </ScrollReveal>
+        <ScrollReveal delay={0.1}>
+          <p className="text-base md:text-lg leading-relaxed max-w-3xl">
+            {project.challenge}
+          </p>
+        </ScrollReveal>
       </section>
 
       {/* Results */}
       <section className="px-6 md:px-12 py-16">
-        <span className="section-label text-sm mb-6 block">results.</span>
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-base md:text-lg leading-relaxed max-w-3xl"
-        >
-          {project.results}
-        </motion.p>
+        <ScrollReveal>
+          <span className="section-label text-sm mb-6 block">results.</span>
+        </ScrollReveal>
+        <ScrollReveal delay={0.1}>
+          <p className="text-base md:text-lg leading-relaxed max-w-3xl">
+            {project.results}
+          </p>
+        </ScrollReveal>
       </section>
 
       {/* Testimonial */}
       <section className="px-6 md:px-12 py-16">
-        <span className="section-label text-sm mb-8 block">testimonial.</span>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
+        <ScrollReveal>
+          <span className="section-label text-sm mb-8 block">testimonial.</span>
+        </ScrollReveal>
+        <ScrollReveal delay={0.1} className="text-center">
           <div className="flex items-center justify-center gap-3 mb-8">
             <div className="w-10 h-10 rounded-full bg-secondary" />
             <div className="text-left">
@@ -122,7 +116,7 @@ const ProjectDetail = () => {
               <p className="text-xs text-accent">Founder & CEO</p>
             </div>
           </div>
-        </motion.div>
+        </ScrollReveal>
       </section>
 
       {/* More to Explore */}
