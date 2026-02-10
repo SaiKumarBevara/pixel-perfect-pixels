@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import CustomCursor from "./CustomCursor";
+import Cursor from "@/components/ui/inverted-cursor";
 import PageTransition from "./PageTransition";
 
 interface LayoutProps {
@@ -12,7 +12,7 @@ interface LayoutProps {
 const Layout = ({ children, showFooter = true }: LayoutProps) => {
   return (
     <>
-      <CustomCursor />
+      <Cursor />
       <PageTransition>
         <main>{children}</main>
         {showFooter && <Footer />}
