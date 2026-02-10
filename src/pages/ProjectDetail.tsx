@@ -20,12 +20,7 @@ const ProjectDetail = () => {
 
   return (
     <Layout>
-      {/* Header */}
-      <section className="px-6 md:px-12 pt-12 pb-8">
-        <div className="flex items-center justify-between mb-8">
-          <Link to="/works" className="text-sm font-bold tracking-wider">YUYA</Link>
-          <span className="text-xs text-muted-foreground">::</span>
-        </div>
+      <section className="px-6 md:px-12 pt-24 pb-8">
 
         <div className="flex justify-end mb-12">
           <div className="text-xs text-right space-y-1">

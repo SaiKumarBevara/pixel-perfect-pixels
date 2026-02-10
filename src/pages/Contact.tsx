@@ -49,12 +49,7 @@ const Contact = forwardRef<HTMLDivElement>((_, ref) => {
 
   return (
     <Layout>
-      {/* Header */}
-      <section className="px-6 md:px-12 pt-12 pb-8">
-        <div className="flex items-center justify-between mb-2">
-          <span className="text-sm font-bold tracking-wider">YUYA</span>
-          <span className="text-xs text-muted-foreground">::</span>
-        </div>
+      <section className="px-6 md:px-12 pt-24 pb-8">
 
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
