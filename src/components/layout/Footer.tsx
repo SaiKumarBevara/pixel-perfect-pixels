@@ -1,8 +1,19 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleGetInTouch = () => {
+    if (location.pathname === "/contact") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/contact");
+    }
+  };
+
   return (
     <footer className="bg-foreground text-primary-foreground">
       {/* Social Links */}
@@ -22,12 +33,12 @@ const Footer = () => {
           </h2>
 
           <div className="flex items-center gap-6 mt-10 pb-32">
-            <Link
-              to="/contact"
+            <button
+              onClick={handleGetInTouch}
               className="border border-primary-foreground/30 px-8 py-3 text-sm hover:bg-primary-foreground hover:text-foreground transition-colors"
             >
               Get in Touch
-            </Link>
+            </button>
             <div className="flex items-center gap-2 text-sm text-primary-foreground/80">
               <span className="w-2.5 h-2.5 rounded-full bg-primary-foreground/80" />
               Available For Work
