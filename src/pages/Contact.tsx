@@ -1,14 +1,27 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { forwardRef, useState } from "react";
 import { Copy } from "lucide-react";
 import Layout from "@/components/layout/Layout";
+import { useToast } from "@/hooks/use-toast";
 
-const Contact = () => {
+const Contact = forwardRef<HTMLDivElement>((_, ref) => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [sending, setSending] = useState(false);
+  const { toast } = useToast();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
+    if (!form.name || !form.email || !form.message) {
+      toast({ title: "Please fill in all fields", variant: "destructive" });
+      return;
+    }
+    setSending(true);
+    // Simulate send
+    setTimeout(() => {
+      setSending(false);
+      setForm({ name: "", email: "", message: "" });
+      toast({ title: "Message sent!", description: "We'll get back to you soon." });
+    }, 1000);
   };
 
   return (
@@ -72,15 +85,18 @@ const Contact = () => {
             />
             <button
               type="submit"
-              className="w-full bg-muted-foreground text-primary-foreground py-3 text-sm font-medium hover:bg-foreground transition-colors"
+              disabled={sending}
+              className="w-full bg-muted-foreground text-primary-foreground py-3 text-sm font-medium hover:bg-foreground transition-colors disabled:opacity-50"
             >
-              Send It!
+              {sending ? "Sending..." : "Send It!"}
             </button>
           </motion.form>
         </div>
       </section>
     </Layout>
   );
-};
+});
+
+Contact.displayName = "Contact";
 
 export default Contact;
