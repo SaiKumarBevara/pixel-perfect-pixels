@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Layout from "@/components/layout/Layout";
+import ScrollReveal from "@/components/ScrollReveal";
 import Marquee from "@/components/sections/Marquee";
 import { services, faqs } from "@/lib/data";
 import avatar from "@/assets/avatar.jpg";
@@ -39,26 +40,13 @@ const About = () => {
           <a href="#" className="text-sm text-accent hover:underline">Read.cv</a>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start"
-        >
-          <p className="text-xl md:text-2xl leading-relaxed">
+        <ScrollReveal>
+          <p className="text-xl md:text-2xl leading-relaxed max-w-xl">
             I collaborate with businesses of all sizes worldwide, using the latest technologies. My designs have also earned multiple awards.
           </p>
-          <div />
-        </motion.div>
+        </ScrollReveal>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-12"
-        >
+        <ScrollReveal delay={0.2} className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-12">
           <img
             src={aboutDesigner}
             alt="Designer at work"
@@ -68,29 +56,22 @@ const About = () => {
           <p className="text-sm text-muted-foreground leading-relaxed">
             I'm dedicated to crafting beautiful and highly functional designs that seamlessly align with my clients' unique needs and long-term goals.
           </p>
-        </motion.div>
+        </ScrollReveal>
       </section>
 
       {/* Services */}
       <section className="px-6 md:px-12 py-16">
         <span className="section-label text-sm mb-12 block">services.</span>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-col items-center gap-2"
-        >
-          {services.map((service) => (
-            <span
-              key={service}
-              className="text-3xl md:text-5xl lg:text-6xl font-black italic tracking-tight hover:text-accent transition-colors cursor-default"
-            >
-              {service}
-            </span>
+        <ScrollReveal className="flex flex-col items-center gap-2">
+          {services.map((service, i) => (
+            <ScrollReveal key={service} delay={i * 0.05}>
+              <span className="text-3xl md:text-5xl lg:text-6xl font-black italic tracking-tight hover:text-accent transition-colors cursor-default">
+                {service}
+              </span>
+            </ScrollReveal>
           ))}
-        </motion.div>
+        </ScrollReveal>
       </section>
 
       {/* Clients Marquee */}
@@ -98,20 +79,22 @@ const About = () => {
 
       {/* Photos */}
       <section className="px-6 md:px-12 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <ScrollReveal className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <img
             src={aboutDesigner}
             alt="Working"
             className="w-full h-72 object-cover"
             loading="lazy"
           />
-          <img
-            src={aboutPhotographer}
-            alt="Photography"
-            className="w-full h-72 object-cover"
-            loading="lazy"
-          />
-        </div>
+          <ScrollReveal delay={0.15}>
+            <img
+              src={aboutPhotographer}
+              alt="Photography"
+              className="w-full h-72 object-cover"
+              loading="lazy"
+            />
+          </ScrollReveal>
+        </ScrollReveal>
       </section>
 
       {/* FAQs */}

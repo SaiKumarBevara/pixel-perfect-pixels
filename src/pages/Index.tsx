@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Copy } from "lucide-react";
 import Layout from "@/components/layout/Layout";
+import ScrollReveal from "@/components/ScrollReveal";
 import avatar from "@/assets/avatar.jpg";
 import { projects } from "@/lib/data";
 
@@ -56,22 +57,18 @@ const Index = () => {
 
       {/* Work Section */}
       <section className="px-6 md:px-12 pb-12">
-        <div className="flex items-center justify-between mb-6">
-          <span className="section-label text-sm">work.</span>
-          <Link to="/works" className="text-sm text-muted-foreground hover:text-foreground transition-colors border border-border px-4 py-1.5">
-            Show More
-          </Link>
-        </div>
+        <ScrollReveal>
+          <div className="flex items-center justify-between mb-6">
+            <span className="section-label text-sm">work.</span>
+            <Link to="/works" className="text-sm text-muted-foreground hover:text-foreground transition-colors border border-border px-4 py-1.5">
+              Show More
+            </Link>
+          </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {projects.slice(0, 4).map((project, i) => (
-            <motion.div
-              key={project.slug}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1, duration: 0.5 }}
-            >
+            <ScrollReveal key={project.slug} delay={i * 0.1} distance={30}>
               <Link to={`/works/${project.slug}`} className="group block relative overflow-hidden">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
@@ -87,40 +84,38 @@ const Index = () => {
                   </span>
                 </div>
               </Link>
-            </motion.div>
+            </ScrollReveal>
           ))}
         </div>
       </section>
 
       {/* About Section */}
       <section className="px-6 md:px-12 py-20">
-        <div className="flex items-center justify-between mb-8">
-          <span className="section-label text-sm">about.</span>
-          <Link to="/about" className="text-sm text-accent hover:underline">Read.cv</Link>
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
-        >
-          <p className="text-xl md:text-2xl leading-relaxed">
-            I collaborate with businesses of all sizes worldwide, using the latest technologies. My designs have also earned multiple awards.
-          </p>
-          <div className="flex flex-col items-end gap-4">
-            <img
-              src={avatar}
-              alt="Designer portrait"
-              className="w-full max-w-sm object-cover"
-              loading="lazy"
-            />
-            <p className="text-sm text-muted-foreground max-w-sm text-right">
-              I'm dedicated to crafting beautiful and highly functional designs that seamlessly align with my clients' unique needs and long-term goals.
-            </p>
+        <ScrollReveal>
+          <div className="flex items-center justify-between mb-8">
+            <span className="section-label text-sm">about.</span>
+            <Link to="/about" className="text-sm text-accent hover:underline">Read.cv</Link>
           </div>
-        </motion.div>
+        </ScrollReveal>
+
+        <ScrollReveal delay={0.15}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <p className="text-xl md:text-2xl leading-relaxed">
+              I collaborate with businesses of all sizes worldwide, using the latest technologies. My designs have also earned multiple awards.
+            </p>
+            <div className="flex flex-col items-end gap-4">
+              <img
+                src={avatar}
+                alt="Designer portrait"
+                className="w-full max-w-sm object-cover"
+                loading="lazy"
+              />
+              <p className="text-sm text-muted-foreground max-w-sm text-right">
+                I'm dedicated to crafting beautiful and highly functional designs that seamlessly align with my clients' unique needs and long-term goals.
+              </p>
+            </div>
+          </div>
+        </ScrollReveal>
       </section>
     </Layout>
   );
