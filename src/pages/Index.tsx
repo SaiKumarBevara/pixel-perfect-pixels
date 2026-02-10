@@ -1,13 +1,128 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { Copy } from "lucide-react";
+import Layout from "@/components/layout/Layout";
+import avatar from "@/assets/avatar.jpg";
+import { projects } from "@/lib/data";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <Layout>
+      {/* Hero Section */}
+      <section className="min-h-screen px-6 md:px-12 pt-20 pb-12 flex flex-col justify-center">
+        <div className="flex items-start justify-between mb-4">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            <h1 className="text-7xl md:text-[8rem] lg:text-[10rem] font-black leading-[0.85] tracking-tighter uppercase">
+              YUME
+              <br />
+              YASKUMI
+            </h1>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+            className="hidden md:block"
+          >
+            <img
+              src={avatar}
+              alt="Yume Yaskumi"
+              className="w-24 h-24 lg:w-32 lg:h-32 rounded-full object-cover"
+            />
+          </motion.div>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.6 }}
+          className="flex flex-col md:flex-row md:items-end justify-between mt-12 border-t border-border pt-8"
+        >
+          <div className="flex items-center gap-2 text-sm text-muted-foreground mb-6 md:mb-0">
+            <span>hello@yume.com</span>
+            <Copy size={12} className="cursor-pointer hover:text-foreground transition-colors" />
+          </div>
+
+          <p className="text-base md:text-lg max-w-md leading-relaxed text-muted-foreground font-serif italic">
+            Hello, I'm a freelancer specializing in minimal design with 10 years of expertise — based in Tokyo, working remote. Let's create!
+          </p>
+        </motion.div>
+      </section>
+
+      {/* Work Section */}
+      <section className="px-6 md:px-12 pb-12">
+        <div className="flex items-center justify-between mb-6">
+          <span className="section-label text-sm">work.</span>
+          <Link to="/works" className="text-sm text-muted-foreground hover:text-foreground transition-colors border border-border px-4 py-1.5">
+            Show More
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {projects.slice(0, 4).map((project, i) => (
+            <motion.div
+              key={project.slug}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+            >
+              <Link to={`/works/${project.slug}`} className="group block relative overflow-hidden">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="absolute bottom-4 left-4">
+                  <span className="text-lg font-semibold text-primary-foreground drop-shadow-lg">
+                    {project.title}
+                  </span>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="px-6 md:px-12 py-20">
+        <div className="flex items-center justify-between mb-8">
+          <span className="section-label text-sm">about.</span>
+          <Link to="/about" className="text-sm text-accent hover:underline">Read.cv</Link>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
+        >
+          <p className="text-xl md:text-2xl leading-relaxed">
+            I collaborate with businesses of all sizes worldwide, using the latest technologies. My designs have also earned multiple awards.
+          </p>
+          <div className="flex flex-col items-end gap-4">
+            <img
+              src={avatar}
+              alt="Designer portrait"
+              className="w-full max-w-sm object-cover"
+              loading="lazy"
+            />
+            <p className="text-sm text-muted-foreground max-w-sm text-right">
+              I'm dedicated to crafting beautiful and highly functional designs that seamlessly align with my clients' unique needs and long-term goals.
+            </p>
+          </div>
+        </motion.div>
+      </section>
+    </Layout>
   );
 };
 
