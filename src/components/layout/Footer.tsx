@@ -19,9 +19,9 @@ const Footer = () => {
       {/* Social Links */}
       <div className="px-6 md:px-12 pt-20 md:pt-32">
         <div className="flex justify-end gap-6 mb-20 text-sm">
-          <a href="#" className="hover:opacity-70 transition-opacity">Linkedin</a>
-          <a href="#" className="hover:opacity-70 transition-opacity">Twitter</a>
-          <a href="#" className="hover:opacity-70 transition-opacity">Behance</a>
+          <a href="https://www.linkedin.com/in/bevara-sai-kumar-710b92217/" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">Linkedin</a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">Twitter</a>
+          <a href="https://medium.com/@bevarasaikumar121" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">Medium</a>
         </div>
 
         {/* CTA */}
