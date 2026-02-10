@@ -12,7 +12,7 @@ const Contact = forwardRef<HTMLDivElement>((_, ref) => {
 
   const copyEmail = async () => {
     try {
-      await navigator.clipboard.writeText("hello@yume.com");
+      await navigator.clipboard.writeText("bevarasaikumar121@gmail.com");
       toast({ title: "Email copied to clipboard!" });
     } catch {
       toast({ title: "Failed to copy", variant: "destructive" });
@@ -71,7 +71,7 @@ const Contact = forwardRef<HTMLDivElement>((_, ref) => {
               onClick={copyEmail}
               className="flex items-center gap-2 text-sm text-muted-foreground mb-6 hover:text-foreground transition-colors"
             >
-              <span>hello@yume.com</span>
+              <span>bevarasaikumar121@gmail.com</span>
               <Copy size={12} />
             </button>
           </div>

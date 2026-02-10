@@ -27,7 +27,7 @@ const Navbar = () => {
       style={{ pointerEvents: visible ? "auto" : "none" }}
     >
       <Link to="/" className="text-sm font-black tracking-wider uppercase">
-        YUYA
+        SK
       </Link>
 
       <div className="flex items-center gap-8">

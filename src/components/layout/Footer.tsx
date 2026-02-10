@@ -51,7 +51,7 @@ const Footer = () => {
       <div className="border-t border-primary-foreground/10 px-6 md:px-12 py-6 flex flex-col md:flex-row justify-between text-xs text-primary-foreground/50 gap-4">
         <div>
           <p>+81 (0)90 1234 5678</p>
-          <p>hello@yuya.com</p>
+          <p>bevarasaikumar121@gmail.com</p>
         </div>
         <div>
           <p>Designed & Developed</p>
@@ -59,7 +59,7 @@ const Footer = () => {
         </div>
         <div className="md:text-right">
           <p>All rights reserved,</p>
-          <p>YUYA ©2024</p>
+          <p>SK ©2024</p>
         </div>
       </div>
     </footer>
