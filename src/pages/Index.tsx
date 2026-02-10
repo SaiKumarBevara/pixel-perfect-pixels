@@ -94,26 +94,29 @@ const Index = () => {
         <ScrollReveal>
           <div className="flex items-center justify-between mb-8">
             <span className="section-label text-sm">about.</span>
-            <a href="https://drive.google.com/drive/folders/1_f4UrKNN_DaOjhi5DJZI24uQVjLUEmW4?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-sm text-accent hover:underline">Read.cv</a>
+            <Link to="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors border border-border px-4 py-1.5">
+              Show More
+            </Link>
           </div>
         </ScrollReveal>
 
         <ScrollReveal delay={0.15}>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <p className="text-xl md:text-2xl leading-relaxed">
-              I collaborate with businesses of all sizes worldwide, using the latest technologies. My designs have also earned multiple awards.
+          <p className="text-2xl md:text-4xl lg:text-5xl font-bold leading-snug tracking-tight text-justify max-w-2xl">
+            I collaborate with businesses of all sizes to build scalable Mendix applications using modern integrations and automation. My work spans healthcare, pharma, and FMCG, focusing on reliability, performance, and long-term value.
+          </p>
+        </ScrollReveal>
+
+        <ScrollReveal delay={0.25}>
+          <div className="mt-16 flex flex-col md:flex-row items-center md:items-end gap-8 justify-center">
+            <img
+              src={avatar}
+              alt="Designer portrait"
+              className="w-64 md:w-80 object-cover"
+              loading="lazy"
+            />
+            <p className="text-sm text-muted-foreground max-w-xs text-justify">
+              I'm dedicated to building clean, maintainable Mendix solutions that align with business goals and support long-term growth.
             </p>
-            <div className="flex flex-col items-end gap-4">
-              <img
-                src={avatar}
-                alt="Designer portrait"
-                className="w-full max-w-sm object-cover"
-                loading="lazy"
-              />
-              <p className="text-sm text-muted-foreground max-w-sm text-right">
-                I'm dedicated to crafting beautiful and highly functional designs that seamlessly align with my clients' unique needs and long-term goals.
-              </p>
-            </div>
           </div>
         </ScrollReveal>
       </section>
