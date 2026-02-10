@@ -50,7 +50,7 @@ const Index = () => {
           </div>
 
           <p className="text-base md:text-lg max-w-md leading-relaxed text-muted-foreground font-serif italic">
-            Hello, I'm a freelancer specializing in minimal design with 10 years of expertise — based in Tokyo, working remote. Let's create!
+            Hello, I'm a Mendix Advanced Certified Developer specializing in enterprise low-code and AI-driven solutions with 2+ years of experience — based in Hyderabad. Let's create!
           </p>
         </motion.div>
       </section>
