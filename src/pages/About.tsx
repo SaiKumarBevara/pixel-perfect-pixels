@@ -82,12 +82,15 @@ const About = () => {
             loading="lazy"
           />
           <ScrollReveal delay={0.15}>
-            <img
-              src={aboutPhotographer}
-              alt="Photography"
-              className="w-full h-72 object-cover"
-              loading="lazy"
-            />
+            <div className="w-full h-72 overflow-hidden">
+              <img
+                src={aboutPhotographer}
+                alt="Photography"
+                className="w-full h-full object-cover"
+                style={{ objectPosition: 'center 30%' }}
+                loading="lazy"
+              />
+            </div>
           </ScrollReveal>
         </ScrollReveal>
       </section>
