@@ -7,7 +7,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import { AnimatePresence } from "framer-motion";
 import Index from "./pages/Index";
 import Works from "./pages/Works";
-import ProjectDetail from "./pages/ProjectDetail";
+
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -19,7 +19,7 @@ const AnimatedRoutes = () => {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Index />} />
         <Route path="/works" element={<Works />} />
-        <Route path="/works/:slug" element={<ProjectDetail />} />
+        
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
