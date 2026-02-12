@@ -74,11 +74,11 @@ export const projects: Project[] = [
 ];
 
 export const services = [
-  "ILLUSTRATION",
-  "BRAND ART",
-  "PHOTO",
+  "MENDIX DEVELOPMENT",
+  "ENTERPRISE APPLICATIONS",
+  "SYSTEM INTEGRATIONS",
+  "AI & AUTOMATION",
   "UI&UX DESIGN",
-  "VIDEO EDIT",
 ];
 
 export const clients = [
