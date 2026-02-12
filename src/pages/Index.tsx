@@ -33,7 +33,7 @@ const Index = () => {
             <img
               src={avatar}
               alt="Bevara Saikumar"
-              className="w-24 h-24 lg:w-32 lg:h-32 rounded-full object-cover"
+              className="w-24 h-24 lg:w-32 lg:h-32 rounded-full object-cover object-top"
             />
           </motion.div>
         </div>
